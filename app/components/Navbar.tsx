@@ -1,18 +1,43 @@
-import Logo from "./Logo";
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import { FiMenu, FiX } from "react-icons/fi";
+import Logo from "./Logo";
 
 export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
     return(
-        <nav className="flex justify-between items-center px-6 py-2 bg-white shadow">
+        <nav className="flex justify-between items-center h-14 px-6 bg-white shadow">
             <Link href="/">
                 <Logo />
             </Link>
-            <ul className="flex gap-6 text-gray-700 text-sm sm:text-base">
+
+            {/* Desktop Menu */}
+            <ul className="hidden md:flex gap-6 text-gray-700">
                 <li><Link href="/">Home</Link></li>
                 <li><Link href="/services">Services</Link></li>
                 <li><Link href="/about">About</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
             </ul>
+
+            {/* Mobile hamburger */}
+            <div className="md:hidden">
+                <button onClick={() => setIsOpen(!isOpen)} className="text-2xl">
+                    {isOpen ? <FiX /> : <FiMenu />}
+                </button>
+            </div>
+
+            {/* Mobile Menu */}
+            {isOpen && (
+                <ul className="absolute top-14 left-0 w-full bg-white shadow-md flex flex-col gap-4 p-6 md:hidden">
+                    <li><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+                    <li><Link href="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
+                    <li><Link href="/about" onClick={() => setIsOpen(false)}>About</Link></li>
+                    <li><Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
+                </ul>
+            )}
         </nav>
     )
 }
