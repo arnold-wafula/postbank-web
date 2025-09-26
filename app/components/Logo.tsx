@@ -7,8 +7,8 @@ export default function Logo() {
                 <Image
                     src="/logo.png"
                     alt="Postbank Logo"
-                    fill
-                    className="object-contain"
+                    width={100}
+                    height={40}
                     priority
                 />
             </div>
