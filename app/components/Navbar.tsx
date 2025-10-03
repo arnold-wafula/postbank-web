@@ -4,20 +4,29 @@ import { useState } from "react";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
 import Logo from "./Logo";
+import TopBar from "./TopBar";
+
+import {
+    NavigationMenu,
+    NavigationMenuList,
+    NavigationMenuItem,
+    NavigationMenuTrigger,
+    NavigationMenuContent,
+    NavigationMenuLink,
+  } from "@/components/ui/navigation-menu"
+  
+import {
+    Sheet,
+    SheetContent,
+    SheetTrigger,
+  } from "@/components/ui/sheet"
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <>
-            {/* Top Bar */}
-            <div className="w-full bg-blue-900 text-white text-sm py-2 px-6 flex justify-between items-center">
-                <span>Secure Banking • Trusted Since 1910</span>
-                <div className="flex gap-4">
-                    <a href="tel:+254700000000" className="hover:underline">+254 700 000 000</a>
-                    <a href="/help" className="hover:underline">Help</a>
-                </div>
-            </div>
+            <TopBar />
 
             {/* Main Navbar */}
             <nav className="flex justify-between items-center h-16 px-6 bg-white shadow relative z-50">
@@ -26,13 +35,63 @@ export default function Navbar() {
                     <Logo />
                 </Link>
 
-                {/* Desktop Menu */}
-                <ul className="hidden md:flex gap-6 text-gray-700 font-medium">
-                    <li><Link href="/">Home</Link></li>
-                    <li><Link href="/services">Services</Link></li>
-                    <li><Link href="/about">About</Link></li>
-                    <li><Link href="/contact">Contact</Link></li>
-                </ul>
+                {/* Desktop nav */}
+                <div className="hidden md:flex items-center gap-6">
+                    <NavigationMenu>
+                        <NavigationMenuList>
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild>
+                                    <Link href="/">Home</Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+
+                            {/* About Dropdown */}
+                            <NavigationMenuItem>
+                                <NavigationMenuTrigger>About</NavigationMenuTrigger>
+                                <NavigationMenuContent className="P-4">
+                                    <ul className="grid gap-2 w-48">
+                                        <li><Link href="/about/who-we-are">Who We Are</Link></li>
+                                        <li><Link href="/about/team">The Team</Link></li>
+                                    </ul>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+
+                            {/* Savings Dropdown */}
+                            <NavigationMenuItem>
+                                <NavigationMenuTrigger>Savings Accounts</NavigationMenuTrigger>
+                                <NavigationMenuContent className="p-4">
+                                    <ul className="grid gap-2 w-56">
+                                        <li><Link href="/savings/mchama">M-Chama Account</Link></li>
+                                        <li><Link href="/savings/bidii">Bidii Savings</Link></li>
+                                    </ul>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+
+                            {/* Transfers Dropdown */}
+                            <NavigationMenuItem>
+                                <NavigationMenuTrigger>Money Transfers</NavigationMenuTrigger>
+                                <NavigationMenuContent className="p-4">
+                                    <ul className="grid gap-2 w-56">
+                                    <li><Link href="/transfers/ria">RIA</Link></li>
+                                    <li><Link href="/transfers/western-union">Western Union</Link></li>
+                                    </ul>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild>
+                                    <Link href="/services">Services</Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild>
+                                    <Link href="/resources">Resources</Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                        </NavigationMenuList>
+                    </NavigationMenu>
+                </div>
 
                 {/* Mobile Hamburger */}
                 <div className="md:hidden">
