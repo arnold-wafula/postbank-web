@@ -28,14 +28,14 @@ export default function Navbar() {
 
   return (
     <>
-      <TopBar />
-
-      <nav className="bg-white shadow relative z-50">
+    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <TopBar />
+        <nav className="bg-white shadow relative z-50">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-16">
-          {/* Logo aligned with TopBar start */}
-          <Link href="/" className="flex-shrink-0">
+            {/* Logo aligned with TopBar start */}
+            <Link href="/" className="flex-shrink-0">
             <Logo />
-          </Link>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center justify-center flex-1 relative">
@@ -259,7 +259,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {/* {isOpen && (
-          <ul className="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col gap-4 p-6 text-lg font-medium text-gray-800 md:hidden">
+            <ul className="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col gap-4 p-6 text-lg font-medium text-gray-800 md:hidden">
             <li><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
             <li><Link href="/about" onClick={() => setIsOpen(false)}>About</Link></li>
             <li><Link href="/accounts" onClick={() => setIsOpen(false)}>Accounts</Link></li>
@@ -268,13 +268,15 @@ export default function Navbar() {
             <li><Link href="/resources" onClick={() => setIsOpen(false)}>Resources</Link></li>
             <li><Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
             <li>
-              <Button className="bg-[#ab9450] text-black font-semibold w-full mt-2 rounded-md">
+                <Button className="bg-[#ab9450] text-black font-semibold w-full mt-2 rounded-md">
                 Internet Banking
-              </Button>
+                </Button>
             </li>
-          </ul>
+            </ul>
         )} */}
-      </nav>
+        </nav>
+    </header>
+      
     </>
   );
 }
