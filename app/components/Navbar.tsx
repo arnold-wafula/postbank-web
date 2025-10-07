@@ -40,7 +40,7 @@ export default function Navbar() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center justify-center flex-1 relative">
                 <NavigationMenu>
-                    <NavigationMenuList className="flex gap-6 text-[15px] font-medium text-gray-800">
+                    <NavigationMenuList className="flex gap-6 text-[17px] font-small text-gray-800">
                     
                     <NavigationMenuItem>
                         <NavigationMenuLink asChild>
