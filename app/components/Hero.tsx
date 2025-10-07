@@ -17,7 +17,7 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="relative max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between h-auto md:h-[600px] px-6 md:px-12 py-10 md:py-0">
+      <div className="relative max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between h-auto md:h-[540px] px-6 md:px-12 py-10 md:py-0">
         
         {/* LEFT: Text */}
         <div className="flex-1 text-center md:text-left space-y-6 z-10 mt-6 md:mt-0">
