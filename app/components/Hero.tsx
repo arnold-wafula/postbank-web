@@ -19,7 +19,7 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between h-auto md:h-[540px] px-6 md:px-12 py-10 md:py-0">
         
-        {/* LEFT: Text */}
+        {/* Left: Text */}
         <div className="flex-1 text-center md:text-left space-y-6 z-10 mt-6 md:mt-0">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
             A Tradition of Trust, <br /> Built for Tomorrow
@@ -47,7 +47,7 @@ export default function Hero() {
         {/* Accent Line (hidden on mobile) */}
         <div className="hidden md:block w-[2px] h-2/3 bg-[#ab9450] mx-12 rounded-full shadow-md"></div>
 
-        {/* RIGHT: Image (on top for mobile) */}
+        {/* Right: Image (on top for mobile) */}
         <div className="flex-1 h-[300px] sm:h-[400px] md:h-[600px] relative md:pt-12">
           <img
             src="/hero1.jpg"
