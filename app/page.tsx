@@ -1,6 +1,9 @@
 import Hero from "./components/Hero"
 import Services from "./services/page"
-// import QuickAccess from "./components/QuickAccess"
+import News from "./components/News"
+import Partners from "./components/Partners"
+import Testimonials from "./components/Testimonials"
+import CTABanner from "./components/CTABanner"
 
 export default function Home() {
   return(
@@ -8,7 +11,10 @@ export default function Home() {
       <section className="text-center py-20">
         <Hero />
         <Services />
-        {/* <QuickAccess /> */}
+        <News />
+        <Partners />
+        <Testimonials />
+        <CTABanner />
       </section>
     </main>
   )
