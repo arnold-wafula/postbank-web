@@ -3,7 +3,7 @@ import Services from "./services/page"
 import News from "./components/News"
 import Partners from "./components/Partners"
 import Testimonials from "./components/Testimonials"
-import CTABanner from "./components/CTABanner"
+import CTADownloadApp from "./components/CTADownloadApp"
 
 export default function Home() {
   return(
@@ -14,7 +14,7 @@ export default function Home() {
         <News />
         <Partners />
         <Testimonials />
-        <CTABanner />
+        <CTADownloadApp />
       </section>
     </main>
   )
